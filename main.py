@@ -13,9 +13,10 @@ while totalPlays < maxPlays:
     time.sleep(random.uniform(2, 5))
     start = time.monotonic()
     _ = input(f"GO{chr(33)}")
-    reactionTime = round(time.monotonic() - start, 4) * 1000
+    reactionTime = round((time.monotonic() - start) * 1000, 1)
     if reactionTime > 0:
         print(str(reactionTime) + " ms")
+        print()
         reactionTimes.append(reactionTime)
         totalPlays += 1
     else:
